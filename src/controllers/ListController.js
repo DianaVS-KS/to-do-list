@@ -32,7 +32,6 @@ const updateToDo = (req, res) => {
     const { params: { id }, body } = req;
     List.readAll((toDos) => {
       const toDo = toDos.find(ent => ent.id === id);
-      console.log(typeof id)
       if(toDo) {
         const repeated = toDos.filter(t => {
             if(t.todo === body.todo){
